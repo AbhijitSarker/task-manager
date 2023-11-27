@@ -1,5 +1,11 @@
 const express = require('express');
 const app = express();
+const tasks = require('./routes/tasks')
+
+
+//middlewares
+
+app.use(express.json());
 
 
 
@@ -7,6 +13,11 @@ const app = express();
 app.get('/', (req, res, next) => {
     res.send('Task Manager App');
 })
+
+
+app.use('/api/v1/tasks', tasks);
+
+
 
 const port = 3000;
 
