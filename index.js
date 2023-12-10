@@ -11,12 +11,12 @@ const cors = require('cors');
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 
 
 
 //routes
 app.use('/api/v1/tasks', tasks);
-app.use(cors());
 
 app.use(notFound);
 
